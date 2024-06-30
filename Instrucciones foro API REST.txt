@@ -1,0 +1,105 @@
+
+1. Configuración del proyecto:
+   - Utiliza Maven o Gradle como sistema de gestión de proyectos
+   - Lenguaje: Java
+   - Framework: Spring Boot
+   - Group: com.alura
+   - Artifact: foro
+   - Package name: com.alura.foro
+   - Packaging: JAR
+   - Versión de Java: 17 o superior
+
+2. Dependencias principales:
+   - Spring Web
+   - Spring Data JPA
+   - Spring Security
+   - JSON Web Token (JWT)
+   - Base de datos de tu elección (por ejemplo, H2, MySQL, PostgreSQL)
+
+3. Base de datos:
+   - Utiliza una base de datos de tu elección para almacenar los datos del foro
+   - Configura la conexión en el archivo application.properties o application.yml
+
+4. Funcionalidades principales:
+   a. Listar tópicos:
+      - Implementa un endpoint GET /topicos
+      - Retorna una lista de todos los tópicos creados
+      - Incluye paginación en la respuesta
+
+   b. Registrar un nuevo tópico:
+      - Implementa un endpoint POST /topicos
+      - Recibe datos como id de usuario, mensaje, nombre del curso y título del tópico
+      - Valida que el usuario esté autenticado antes de permitir la creación
+
+   c. Visualizar un tópico específico:
+      - Implementa un endpoint GET /topicos/{id}
+      - Retorna los detalles de un tópico específico
+
+   d. Actualizar un tópico:
+      - Implementa un endpoint PUT /topicos/{id}
+      - Permite actualizar la información de un tópico existente
+      - Valida que el usuario esté autenticado y sea el autor del tópico
+
+   e. Eliminar un tópico:
+      - Implementa un endpoint DELETE /topicos/{id}
+      - Permite eliminar un tópico existente
+      - Valida que el usuario esté autenticado y tenga permisos para eliminar
+
+5. Seguridad:
+   - Implementa autenticación utilizando Spring Security
+   - Utiliza JSON Web Tokens (JWT) para manejar las sesiones de usuario
+   - Crea un endpoint POST /login para autenticación
+   - Implementa un filtro de seguridad para validar los tokens JWT en las peticiones
+
+6. Manejo de errores:
+   - Implementa manejo de excepciones personalizado
+   - Retorna códigos de estado HTTP apropiados (200, 201, 400, 403, 404, etc.)
+   - Proporciona mensajes de error descriptivos en las respuestas
+
+7. Modelado de datos:
+   - Crea entidades JPA para Topico, Usuario, Curso y Respuesta
+   - Implementa relaciones apropiadas entre las entidades
+
+8. Repositorios y servicios:
+   - Crea repositorios Spring Data JPA para las entidades
+   - Implementa servicios que manejen la lógica de negocio
+
+9. DTOs (Data Transfer Objects):
+   - Utiliza DTOs para las peticiones y respuestas de la API
+   - Implementa mapeos entre entidades y DTOs
+
+10. Validaciones:
+    - Implementa validaciones para los campos de entrada en los DTOs
+    - Utiliza Bean Validation (por ejemplo, @NotNull, @Size, etc.)
+
+11. Documentación de la API:
+    - Utiliza Springdoc OpenAPI UI para documentar los endpoints
+    - Asegúrate de que cada endpoint esté correctamente documentado
+
+12. Pruebas:
+    - Implementa pruebas unitarias para los servicios y controladores
+    - Crea pruebas de integración para los endpoints de la API
+
+13. Consideraciones adicionales:
+    - Sigue las mejores prácticas de REST API
+    - Utiliza nombres de variables y métodos descriptivos en español
+    - Documenta el código adecuadamente
+    - Implementa logging para registrar operaciones importantes y errores
+
+14. Funcionalidades opcionales:
+    - Implementa un sistema de moderación para los tópicos
+    - Agrega funcionalidad para responder a los tópicos
+    - Implementa un sistema de notificaciones para nuevas respuestas
+    - Añade la capacidad de marcar un tópico como resuelto
+
+15. Herramientas y recursos:
+    - Utiliza Insomnia o Postman para probar los endpoints de la API
+    - Consulta el tablero de Trello proporcionado para seguir el progreso del proyecto
+    - Utiliza el servidor de Discord para resolver dudas y compartir avances
+
+16. Entrega:
+    - Sube tu código a un repositorio de GitHub
+    - Incluye un README.md con instrucciones para ejecutar el proyecto
+    - Comparte tu progreso y el resultado final en las redes sociales y en la comunidad de Discord
+
+Recuerda que este es un proyecto de backend, por lo que no es necesario implementar una interfaz gráfica. Concéntrate en crear una API REST robusta y segura que pueda servir como base para un foro funcional.
